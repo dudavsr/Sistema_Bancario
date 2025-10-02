@@ -37,7 +37,12 @@ class ContaBancaria {
 
     //depositar
     void depositar(double valor){
-        saldo += valor;
+        if (valor > 0) {
+            saldo += valor;
+        }
+        else {
+            cout << "Valor invalido para deposito, ou negativo ou zero" << endl; 
+        }
     }
 
     //sacar
@@ -45,6 +50,9 @@ class ContaBancaria {
         if (valor <= saldo){
             saldo -= valor;
         }
+        else {
+            cout << "Valor impossivel de ser sacado" << endl;
+}
     }
 
     //transferir pra uma conta só
@@ -56,6 +64,9 @@ class ContaBancaria {
              << " da conta " << numero 
              << " para a conta " << destino.getnumero() << endl;
         }
+        else {
+            cout << "Saldo insuficiente ou valor invalido para a operação" << endl;
+}
     }
 
     //transferir pra duas contas
@@ -70,6 +81,9 @@ class ContaBancaria {
              << " e " << destino2.getnumero() 
              << ") da conta " << numero << endl;
         }
+        else {
+            cout << "Saldo insuficiente ou valor invalido para a operação" << endl;
+}
     }
 
     //mostra o saldo
